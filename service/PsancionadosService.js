@@ -88,10 +88,9 @@ async function post_psancionados (body) {
         newQuery[key]= value;
       }
     }
-    console.log(newQuery);
+    //console.log(newQuery);
     if(pageSize <= 200 && pageSize >= 1){
       let paginationResult  = await Psancionados.paginate(newQuery,{page :page , limit: pageSize, sort: newSort}).then();
-      console.log(paginationResult);
       let objpagination ={hasNextPage : paginationResult.hasNextPage, page:paginationResult.page, pageSize : paginationResult.limit, totalRows: paginationResult.totalDocs }
       let objresults = paginationResult.docs;
 

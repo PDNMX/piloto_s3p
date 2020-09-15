@@ -73,7 +73,6 @@ async function post_psancionados (body) {
 
       }else if(key === "institucionDependencia"){
         newQuery[key+".nombre"]={ $regex : diacriticSensitiveRegex(value),  $options : 'i'}
-
       }else if(key === "expediente") {
         newQuery[key] = {$regex: value, $options: 'i'}
 

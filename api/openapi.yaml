@@ -6,12 +6,12 @@ externalDocs:
   description: Más información
   url: https://github.com/PDNMX/api_docs
 servers:
-- url: /
+  - url: /
 paths:
   /v1/psancionados:
     post:
       tags:
-      - psancionados
+        - psancionados
       summary: Muestra los particulares sancionados permitiendo búsquedas avanzadas.
       operationId: post_psancionados
       requestBody:
@@ -47,12 +47,12 @@ paths:
               schema:
                 $ref: '#/components/schemas/resError'
       security:
-      - psancionados_auth: []
+        - psancionados_auth: []
       x-swagger-router-controller: Psancionados
   /v1/psancionados/dependencias:
     get:
       tags:
-      - psancionados
+        - dependencias
       summary: Dependencias donde se cometió la sanción
       operationId: get_dependencias
       responses:
@@ -75,14 +75,14 @@ paths:
               schema:
                 $ref: '#/components/schemas/resError'
       security:
-      - psancionados_auth: []
+        - psancionados_auth: []
       x-swagger-router-controller: Psancionados
 components:
   schemas:
     resParticularesSancionados:
       required:
-      - pagination
-      - results
+        - pagination
+        - results
       type: object
       properties:
         pagination:
@@ -98,194 +98,194 @@ components:
           page: 20
           totalRows: 300
         results:
-        - autoridadSancionadora: OIC
-          responsableSancion:
-            primerApellido: Pérez
-            segundoApellido: López
-            nombres: Carlos
-          institucionDependencia:
-            clave: XYZ987
-            siglas: SHCP
-            nombre: Secretaría de Hacienda y Crédito Público
-          tipoFalta: Contratación indebida
-          resolucion:
-            sentido: Sansionatoria con multa
-            fechaNotificacion: 2019-11-20T00:00:00.000+0000
-            url: https://ejemplo.mx/archivo/documento.pdf
-          expediente: ABC123
-          multa:
-            monto: 5000000
-            moneda:
-              clave: MXN
-              valor: Peso Mexicano
-          tipoSancion:
-          - clave: I
-            valor: Inhabilitado
-          - clave: M
-            valor: Multado
-          acto: Contrataciones
-          documentos:
-          - descripcion: Descripción del documento
-            fecha: 2019-11-20T00:00:00.000+0000
-            tipo: CONSTANCIA_INHABILITACION
-            titulo: Constancia de inhabilitación...
-            id: doc-1
-            url: https://ejemplo.mx/archivo/documento.pdf
-          - descripcion: Descripción del documento
-            fecha: 2019-11-20T00:00:00.000+0000
-            tipo: CONSTANCIA_INHABILITACION
-            titulo: Constancia de inhabilitación...
-            id: doc-1
-            url: https://ejemplo.mx/archivo/documento.pdf
-          fechaCaptura: 2017-07-21T17:32:28Z
-          particularSancionado:
-            nombreRazonSocial: PATITO TELECOM S.A. de C.V.
-            objetoSocial: Objeto social de la empresa
-            domicilioExtranjero:
-              ciudadLocalidad: Springfield
-              codigoPostal: "01234"
-              estadoProvincia: North Takoma
-              calle: Evergreen Terrace
-              numeroExterior: "742"
-              numeroInterior: ""
-              pais:
-                clave: MX
-                valor: México
-            tipoPersona: F
-            directorGeneral:
+          - autoridadSancionadora: OIC
+            responsableSancion:
               primerApellido: Pérez
               segundoApellido: López
-              curp: BADD110313HCMLNS09
               nombres: Carlos
-            domicilioMexico:
-              codigoPostal: "55018"
-              municipio:
-                clave: "033"
-                valor: Ecatepec de Morelos
-              entidadFederativa:
-                clave: "15"
-                valor: México
-              localidad:
-                clave: "0001"
-                valor: Ecatepec de Morelos
-              numeroExterior: "24"
-              numeroInterior: "48"
-              vialidad:
-                clave: CALLE
-                valor: El Rosal
-              pais:
-                clave: MX
-                valor: México
-            apoderadoLegal:
+            institucionDependencia:
+              clave: XYZ987
+              siglas: SHCP
+              nombre: Secretaría de Hacienda y Crédito Público
+            tipoFalta: Contratación indebida
+            resolucion:
+              sentido: Sansionatoria con multa
+              fechaNotificacion: 2019-11-20T00:00:00.000+0000
+              url: https://ejemplo.mx/archivo/documento.pdf
+            expediente: ABC123
+            multa:
+              monto: 5000000
+              moneda:
+                clave: MXN
+                valor: Peso Mexicano
+            tipoSancion:
+              - clave: I
+                valor: Inhabilitado
+              - clave: M
+                valor: Multado
+            acto: Contrataciones
+            documentos:
+              - descripcion: Descripción del documento
+                fecha: 2019-11-20T00:00:00.000+0000
+                tipo: CONSTANCIA_INHABILITACION
+                titulo: Constancia de inhabilitación...
+                id: doc-1
+                url: https://ejemplo.mx/archivo/documento.pdf
+              - descripcion: Descripción del documento
+                fecha: 2019-11-20T00:00:00.000+0000
+                tipo: CONSTANCIA_INHABILITACION
+                titulo: Constancia de inhabilitación...
+                id: doc-1
+                url: https://ejemplo.mx/archivo/documento.pdf
+            fechaCaptura: 2017-07-21T17:32:28Z
+            particularSancionado:
+              nombreRazonSocial: PATITO TELECOM S.A. de C.V.
+              objetoSocial: Objeto social de la empresa
+              domicilioExtranjero:
+                ciudadLocalidad: Springfield
+                codigoPostal: "01234"
+                estadoProvincia: North Takoma
+                calle: Evergreen Terrace
+                numeroExterior: "742"
+                numeroInterior: ""
+                pais:
+                  clave: MX
+                  valor: México
+              tipoPersona: F
+              directorGeneral:
+                primerApellido: Pérez
+                segundoApellido: López
+                curp: BADD110313HCMLNS09
+                nombres: Carlos
+              domicilioMexico:
+                codigoPostal: "55018"
+                municipio:
+                  clave: "033"
+                  valor: Ecatepec de Morelos
+                entidadFederativa:
+                  clave: "15"
+                  valor: México
+                localidad:
+                  clave: "0001"
+                  valor: Ecatepec de Morelos
+                numeroExterior: "24"
+                numeroInterior: "48"
+                vialidad:
+                  clave: CALLE
+                  valor: El Rosal
+                pais:
+                  clave: MX
+                  valor: México
+              apoderadoLegal:
+                primerApellido: Pérez
+                segundoApellido: López
+                curp: BADD110313HCMLNS09
+                nombres: Carlos
+              telefono: "552123244"
+              rfc: PAT21343213
+            causaMotivoHechos: Causa o motivo de la sanción
+            observaciones: Se multo e inhabilitó al proveedor PATITO TELECOM S.A de
+              C.V. por ...
+            id: "1"
+            objetoContrato: Servicio de telefonía fija
+            inhabilitacion:
+              fechaInicial: 2019-01-01T00:00:00.000+0000
+              plazo: 2 años
+              fechaFinal: 2020-12-31T00:00:00.000+0000
+          - autoridadSancionadora: OIC
+            responsableSancion:
               primerApellido: Pérez
               segundoApellido: López
-              curp: BADD110313HCMLNS09
               nombres: Carlos
-            telefono: "552123244"
-            rfc: PAT21343213
-          causaMotivoHechos: Causa o motivo de la sanción
-          observaciones: Se multo e inhabilitó al proveedor PATITO TELECOM S.A de
-            C.V. por ...
-          id: "1"
-          objetoContrato: Servicio de telefonía fija
-          inhabilitacion:
-            fechaInicial: 2019-01-01T00:00:00.000+0000
-            plazo: 2 años
-            fechaFinal: 2020-12-31T00:00:00.000+0000
-        - autoridadSancionadora: OIC
-          responsableSancion:
-            primerApellido: Pérez
-            segundoApellido: López
-            nombres: Carlos
-          institucionDependencia:
-            clave: XYZ987
-            siglas: SHCP
-            nombre: Secretaría de Hacienda y Crédito Público
-          tipoFalta: Contratación indebida
-          resolucion:
-            sentido: Sansionatoria con multa
-            fechaNotificacion: 2019-11-20T00:00:00.000+0000
-            url: https://ejemplo.mx/archivo/documento.pdf
-          expediente: ABC123
-          multa:
-            monto: 5000000
-            moneda:
-              clave: MXN
-              valor: Peso Mexicano
-          tipoSancion:
-          - clave: I
-            valor: Inhabilitado
-          - clave: M
-            valor: Multado
-          acto: Contrataciones
-          documentos:
-          - descripcion: Descripción del documento
-            fecha: 2019-11-20T00:00:00.000+0000
-            tipo: CONSTANCIA_INHABILITACION
-            titulo: Constancia de inhabilitación...
-            id: doc-1
-            url: https://ejemplo.mx/archivo/documento.pdf
-          - descripcion: Descripción del documento
-            fecha: 2019-11-20T00:00:00.000+0000
-            tipo: CONSTANCIA_INHABILITACION
-            titulo: Constancia de inhabilitación...
-            id: doc-1
-            url: https://ejemplo.mx/archivo/documento.pdf
-          fechaCaptura: 2017-07-21T17:32:28Z
-          particularSancionado:
-            nombreRazonSocial: PATITO TELECOM S.A. de C.V.
-            objetoSocial: Objeto social de la empresa
-            domicilioExtranjero:
-              ciudadLocalidad: Springfield
-              codigoPostal: "01234"
-              estadoProvincia: North Takoma
-              calle: Evergreen Terrace
-              numeroExterior: "742"
-              numeroInterior: ""
-              pais:
-                clave: MX
-                valor: México
-            tipoPersona: F
-            directorGeneral:
-              primerApellido: Pérez
-              segundoApellido: López
-              curp: BADD110313HCMLNS09
-              nombres: Carlos
-            domicilioMexico:
-              codigoPostal: "55018"
-              municipio:
-                clave: "033"
-                valor: Ecatepec de Morelos
-              entidadFederativa:
-                clave: "15"
-                valor: México
-              localidad:
-                clave: "0001"
-                valor: Ecatepec de Morelos
-              numeroExterior: "24"
-              numeroInterior: "48"
-              vialidad:
-                clave: CALLE
-                valor: El Rosal
-              pais:
-                clave: MX
-                valor: México
-            apoderadoLegal:
-              primerApellido: Pérez
-              segundoApellido: López
-              curp: BADD110313HCMLNS09
-              nombres: Carlos
-            telefono: "552123244"
-            rfc: PAT21343213
-          causaMotivoHechos: Causa o motivo de la sanción
-          observaciones: Se multo e inhabilitó al proveedor PATITO TELECOM S.A de
-            C.V. por ...
-          id: "1"
-          objetoContrato: Servicio de telefonía fija
-          inhabilitacion:
-            fechaInicial: 2019-01-01T00:00:00.000+0000
-            plazo: 2 años
-            fechaFinal: 2020-12-31T00:00:00.000+0000
+            institucionDependencia:
+              clave: XYZ987
+              siglas: SHCP
+              nombre: Secretaría de Hacienda y Crédito Público
+            tipoFalta: Contratación indebida
+            resolucion:
+              sentido: Sansionatoria con multa
+              fechaNotificacion: 2019-11-20T00:00:00.000+0000
+              url: https://ejemplo.mx/archivo/documento.pdf
+            expediente: ABC123
+            multa:
+              monto: 5000000
+              moneda:
+                clave: MXN
+                valor: Peso Mexicano
+            tipoSancion:
+              - clave: I
+                valor: Inhabilitado
+              - clave: M
+                valor: Multado
+            acto: Contrataciones
+            documentos:
+              - descripcion: Descripción del documento
+                fecha: 2019-11-20T00:00:00.000+0000
+                tipo: CONSTANCIA_INHABILITACION
+                titulo: Constancia de inhabilitación...
+                id: doc-1
+                url: https://ejemplo.mx/archivo/documento.pdf
+              - descripcion: Descripción del documento
+                fecha: 2019-11-20T00:00:00.000+0000
+                tipo: CONSTANCIA_INHABILITACION
+                titulo: Constancia de inhabilitación...
+                id: doc-1
+                url: https://ejemplo.mx/archivo/documento.pdf
+            fechaCaptura: 2017-07-21T17:32:28Z
+            particularSancionado:
+              nombreRazonSocial: PATITO TELECOM S.A. de C.V.
+              objetoSocial: Objeto social de la empresa
+              domicilioExtranjero:
+                ciudadLocalidad: Springfield
+                codigoPostal: "01234"
+                estadoProvincia: North Takoma
+                calle: Evergreen Terrace
+                numeroExterior: "742"
+                numeroInterior: ""
+                pais:
+                  clave: MX
+                  valor: México
+              tipoPersona: F
+              directorGeneral:
+                primerApellido: Pérez
+                segundoApellido: López
+                curp: BADD110313HCMLNS09
+                nombres: Carlos
+              domicilioMexico:
+                codigoPostal: "55018"
+                municipio:
+                  clave: "033"
+                  valor: Ecatepec de Morelos
+                entidadFederativa:
+                  clave: "15"
+                  valor: México
+                localidad:
+                  clave: "0001"
+                  valor: Ecatepec de Morelos
+                numeroExterior: "24"
+                numeroInterior: "48"
+                vialidad:
+                  clave: CALLE
+                  valor: El Rosal
+                pais:
+                  clave: MX
+                  valor: México
+              apoderadoLegal:
+                primerApellido: Pérez
+                segundoApellido: López
+                curp: BADD110313HCMLNS09
+                nombres: Carlos
+              telefono: "552123244"
+              rfc: PAT21343213
+            causaMotivoHechos: Causa o motivo de la sanción
+            observaciones: Se multo e inhabilitó al proveedor PATITO TELECOM S.A de
+              C.V. por ...
+            id: "1"
+            objetoContrato: Servicio de telefonía fija
+            inhabilitacion:
+              fechaInicial: 2019-01-01T00:00:00.000+0000
+              plazo: 2 años
+              fechaFinal: 2020-12-31T00:00:00.000+0000
     reqParticularesSancionados:
       type: object
       properties:
@@ -318,8 +318,8 @@ components:
         $ref: '#/components/schemas/resParticularesSancionados_institucionDependencia'
     resError:
       required:
-      - code
-      - message
+        - code
+        - message
       properties:
         code:
           type: string
@@ -335,10 +335,10 @@ components:
       type: array
       description: Sanción impuesta
       example:
-      - clave: I
-        valor: Inhabilitado
-      - clave: M
-        valor: Multado
+        - clave: I
+          valor: Inhabilitado
+        - clave: M
+          valor: Multado
       items:
         $ref: '#/components/schemas/tipoSancion_inner'
     pais:
@@ -358,10 +358,10 @@ components:
         valor: México
     resParticularesSancionados_pagination:
       required:
-      - hasNextPage
-      - page
-      - pageSize
-      - totalRows
+        - hasNextPage
+        - page
+        - pageSize
+        - totalRows
       type: object
       properties:
         pageSize:
@@ -390,7 +390,7 @@ components:
         totalRows: 300
     resParticularesSancionados_institucionDependencia:
       required:
-      - nombre
+        - nombre
       type: object
       properties:
         nombre:
@@ -624,8 +624,8 @@ components:
         nombres: Carlos
     resParticularesSancionados_particularSancionado:
       required:
-      - nombreRazonSocial
-      - tipoPersona
+        - nombreRazonSocial
+        - tipoPersona
       type: object
       properties:
         nombreRazonSocial:
@@ -645,8 +645,8 @@ components:
           description: Tipo de persona. Valores permitidos F = Física, M = Moral
           example: F
           enum:
-          - F
-          - M
+            - F
+            - M
         telefono:
           maxLength: 12
           type: string
@@ -708,8 +708,8 @@ components:
         rfc: PAT21343213
     resParticularesSancionados_responsableSancion:
       required:
-      - nombres
-      - primerApellido
+        - nombres
+        - primerApellido
       type: object
       properties:
         nombres:
@@ -811,11 +811,11 @@ components:
         fechaFinal: 2020-12-31T00:00:00.000+0000
     resParticularesSancionados_documentos:
       required:
-      - descripcion
-      - fecha
-      - id
-      - titulo
-      - url
+        - descripcion
+        - fecha
+        - id
+        - titulo
+        - url
       type: object
       properties:
         id:
@@ -829,10 +829,10 @@ components:
             "CONSTANCIA_INHABILITACION", "CONSTANCIA_ABSTENCION"]
           example: CONSTANCIA_INHABILITACION
           enum:
-          - RESOLUCION
-          - CONSTANCIA_SANCION
-          - CONSTANCIA_INHABILITACION
-          - CONSTANCIA_ABSTENCION
+            - RESOLUCION
+            - CONSTANCIA_SANCION
+            - CONSTANCIA_INHABILITACION
+            - CONSTANCIA_ABSTENCION
         titulo:
           type: string
           description: Titulo del documento
@@ -859,13 +859,13 @@ components:
         url: https://ejemplo.mx/archivo/documento.pdf
     resParticularesSancionados_results:
       required:
-      - autoridadSancionadora
-      - causaMotivoHechos
-      - fechaCaptura
-      - id
-      - institucionDependencia
-      - particularSancionado
-      - tipoSancion
+        - autoridadSancionadora
+        - causaMotivoHechos
+        - fechaCaptura
+        - id
+        - institucionDependencia
+        - particularSancionado
+        - tipoSancion
       type: object
       properties:
         id:
@@ -952,24 +952,24 @@ components:
             clave: MXN
             valor: Peso Mexicano
         tipoSancion:
-        - clave: I
-          valor: Inhabilitado
-        - clave: M
-          valor: Multado
+          - clave: I
+            valor: Inhabilitado
+          - clave: M
+            valor: Multado
         acto: Contrataciones
         documentos:
-        - descripcion: Descripción del documento
-          fecha: 2019-11-20T00:00:00.000+0000
-          tipo: CONSTANCIA_INHABILITACION
-          titulo: Constancia de inhabilitación...
-          id: doc-1
-          url: https://ejemplo.mx/archivo/documento.pdf
-        - descripcion: Descripción del documento
-          fecha: 2019-11-20T00:00:00.000+0000
-          tipo: CONSTANCIA_INHABILITACION
-          titulo: Constancia de inhabilitación...
-          id: doc-1
-          url: https://ejemplo.mx/archivo/documento.pdf
+          - descripcion: Descripción del documento
+            fecha: 2019-11-20T00:00:00.000+0000
+            tipo: CONSTANCIA_INHABILITACION
+            titulo: Constancia de inhabilitación...
+            id: doc-1
+            url: https://ejemplo.mx/archivo/documento.pdf
+          - descripcion: Descripción del documento
+            fecha: 2019-11-20T00:00:00.000+0000
+            tipo: CONSTANCIA_INHABILITACION
+            titulo: Constancia de inhabilitación...
+            id: doc-1
+            url: https://ejemplo.mx/archivo/documento.pdf
         fechaCaptura: 2017-07-21T17:32:28Z
         particularSancionado:
           nombreRazonSocial: PATITO TELECOM S.A. de C.V.
@@ -1033,22 +1033,22 @@ components:
           description: Campo a ordenar de forma ascendente o descente
           example: asc
           enum:
-          - asc
-          - desc
+            - asc
+            - desc
         rfc:
           type: string
           description: Campo a ordenar de forma ascendente o descente
           example: asc
           enum:
-          - asc
-          - desc
+            - asc
+            - desc
         institucionDependencia:
           type: string
           description: Campo a ordenar de forma ascendente o descente
           example: asc
           enum:
-          - asc
-          - desc
+            - asc
+            - desc
     reqParticularesSancionados_query:
       properties:
         id:
@@ -1086,16 +1086,19 @@ components:
             \ - SANCIÓN ECONÓMICA\n  * `O` - OTRO\n\n*******Deberá devolver todos\
             \ los registros que contengan al menos uno de los valores solicitados.\n"
           example:
-          - I
-          - M
+            - I
+            - M
           items:
             type: string
             enum:
-            - I
-            - M
-            - S
-            - D
-            - A
+              - I
+              - M
+              - S
+              - D
+              - A
+              - IND
+              - SE
+              - O
         tipoPersona:
           type: string
           description: 'Los valores pueden ser:  F = Física, M = Moral'
@@ -1104,8 +1107,8 @@ components:
         de los campos correspondientes
     tipoSancion_inner:
       required:
-      - clave
-      - valor
+        - clave
+        - valor
       type: object
       properties:
         clave:
@@ -1118,14 +1121,14 @@ components:
             \ - SANCIÓN ECONÓMICA\n  * `O` - OTRO\n"
           example: I
           enum:
-          - I
-          - M
-          - S
-          - D
-          - A
-          - IND
-          - SE
-          - O
+            - I
+            - M
+            - S
+            - D
+            - A
+            - IND
+            - SE
+            - O
         valor:
           type: string
           description: Valor del tipo de sanción

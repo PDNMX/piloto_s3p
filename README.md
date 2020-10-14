@@ -1,6 +1,6 @@
 # API S3P - Particulares sancionados.
 ## Introducción
-API del S3S - Particulares sancionados. El funcionamiento del API está apegado a las especificaciones solicitadas por la PDN.
+API del S3P - Particulares sancionados. El funcionamiento del API está apegado a las especificaciones solicitadas por la PDN.
 
 Este proyecto forma parte de una solución que contempla las APIs del S2 y S3 en ambiente de desarrollo, para reproducirlo completamente, se sugiere el siguiente orden:
 * [Instalación](https://docs.google.com/document/d/1aQ0_f3sGiyE94anGy2pwOFn6KLucYTc3ZkrWM8rikIo/edit?usp=sharing): preparación del ambiente de desarrollo.

@@ -81,7 +81,7 @@ async function post_psancionados (body) {
           newQuery[key + ".clave"] = {$in: value};
         }
       }else if(key === "tipoPersona") {
-        newQuery["particularSancionado."+key] = value;
+        newQuery["particularSancionado."+key] = { $regex : value,  $options : 'i'};
 
       }else {
         newQuery[key]= value;

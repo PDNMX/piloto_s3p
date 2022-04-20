@@ -64,7 +64,7 @@ async function post_psancionados (body) {
           }
         }
       }else if( key === "rfc"){
-        newQuery["particularSancionado."+key] = { $regex : value,  $options : 'i'}
+        newQuery["particularSancionado."+key] = { $regex : diacriticSensitiveRegex(value),  $options : 'i'}
 
       }else if(key === "nombreRazonSocial"){
           newQuery["particularSancionado."+key] = { $regex : diacriticSensitiveRegex(value),  $options : 'i'}
